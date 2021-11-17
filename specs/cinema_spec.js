@@ -40,7 +40,7 @@ describe('Cinema', function () {
   });
 
   it('should be able to filter films by genre',function(){
-    const actual = cinema.filterByGenre("action");
+    const actual = cinema.filmsByProperty("genre","action");
     assert.deepStrictEqual(actual, [blackPanther]);
   });
 
@@ -65,10 +65,18 @@ describe('Cinema', function () {
   });
 
   it('should be able to filter films by year',function(){
-    const actual = cinema.filterByYear(2017);
+    const actual = cinema.filmsByProperty("year",2017);
     assert.deepStrictEqual(actual, [bladeRunner,dunkirk , trainspotting]);
   });
 
+  describe('Extension', function () {
+
+    it('should be able to filter by property',function(){
+      const actual = cinema.filmsByProperty("year",2016);
+      assert.deepStrictEqual(actual, [moonlight])
+    })
+
+  })
 
 
 });
