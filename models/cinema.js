@@ -17,11 +17,11 @@ Cinema.prototype.findByTitle = function(filmTitle) {
     return result;
   };
 
-// Cinema.prototype.findByTitle = function(filmTitle) {
-//   const result = this.films.filter((film) => {
-//     return film.title === filmTitle;
-//   });
-//   return result;
-// };
+Cinema.prototype.filterByGenre = function(genre) {
+  const result = this.films.filter((film) => {
+    return film.genre === genre;
+  });
+  return result;
+};
 
 module.exports = Cinema;
