@@ -29,7 +29,21 @@ Cinema.prototype.checkFilmsYear = function(year){
     return film.year === year;
   });
   return result;
-}
+};
 
+Cinema.prototype.overLength = function(length) {
+  const result = this.films.every((film) => {
+    return film.length > length;
+  });
+  return result;
+};
+
+Cinema.prototype.totalRunTime = function(){
+  let total = 0;
+  const result = this.films.forEach((film) => {
+    total += film.length;
+  });
+  return total;
+}
 
 module.exports = Cinema;
